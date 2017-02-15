@@ -39,6 +39,20 @@ class JiraClient implements JiraClientContract
     }
 
     /**
+     * @param Client $client
+     *
+     * @return JiraClient
+     */
+    public function setClient($client)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+
+
+    /**
      * @return string
      */
     public function getJiraUrl()
