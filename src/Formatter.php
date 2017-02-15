@@ -34,9 +34,11 @@ COMMENT;
      * @param \Exception $e
      * @param array      $extra
      *
+     * @param bool       $withCountNumber
+     *
      * @return string
      */
-    public function formatMainTitle(\Exception $e, array $extra)
+    public function formatMainTitle(\Exception $e, array $extra, $withCountNumber = true)
     {
         $prefix        = array_get($extra, 'prefix');
         $titleElements = [];
@@ -46,7 +48,9 @@ COMMENT;
 
         $titleElements[] = $e->getMessage();
         $titleElements[] = "- " . basename($e->getFile()) . " line " . $e->getLine();
-        $titleElements[] = "[1]";
+        if ($withCountNumber) {
+            $titleElements[] = "[1]";
+        }
 
         return implode(" ", $titleElements);
     }

@@ -8,7 +8,7 @@ interface FormatterContract
 
     public function formatComment(\Exception $e, array $extra);
 
-    public function formatMainTitle(\Exception $e, array $extra);
+    public function formatMainTitle(\Exception $e, array $extra, $withCountNumber = true);
 
     public function formatSubtaskTitle(\Exception $e, array $extra);
 

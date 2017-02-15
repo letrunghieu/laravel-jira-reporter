@@ -52,6 +52,25 @@ class FormatterTest extends TestCase
         }
     }
 
+    function testFormatMainTitleWithoutCountNumber()
+    {
+        try {
+            $do = 1 / 0;
+        } catch (\Exception $e) {
+            $result = app('jira_reporter.formatter')->formatMainTitle($e, [
+                'prefix' => 'JIRA',
+                'more'   => [
+                    'key'    => 'value',
+                    'object' => [
+                        'k' => 'v',
+                    ],
+                ],
+            ], false);
+
+            $this->assertSame('JIRA - Division by zero - FormatterTest.php line 58', $result);
+        }
+    }
+
     function testFormatMainTitleWithoutPrefix()
     {
         try {
@@ -66,7 +85,7 @@ class FormatterTest extends TestCase
                 ],
             ]);
 
-            $this->assertSame('Division by zero - FormatterTest.php line 58 [1]', $result);
+            $this->assertSame('Division by zero - FormatterTest.php line 77 [1]', $result);
         }
     }
 
