@@ -1,0 +1,28 @@
+{
+    "name": "hieule/laravel-jira-reporter",
+    "description": "Report Laravel application errors as JIRA ticket",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hieu Le",
+            "email": "letrunghieu.cse09@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "guzzlehttp/guzzle": "^6.2",
+        "illuminate/support": "^5.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.0",
+        "phpunit/phpunit": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "HieuLe\\LaravelJiraReporter\\": "src/",
+            "HieuLe\\LaravelJiraReporterTest\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
