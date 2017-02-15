@@ -1,5 +1,5 @@
 {
-    "name": "hieule/laravel-jira-reporter",
+    "name": "hieu-le/laravel-jira-reporter",
     "description": "Report Laravel application errors as JIRA ticket",
     "license": "MIT",
     "authors": [
