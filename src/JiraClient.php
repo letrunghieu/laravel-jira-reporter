@@ -169,7 +169,16 @@ class JiraClient implements JiraClientContract
 
         if ($response->getStatusCode() < 300) {
             // parse the JSON data and return the exception if the data is not valid
-            $data = \json_decode((string)$response->getBody(), true);
+
+            $bodyText = (string)$response->getBody();
+
+            // do not parse the empty response
+            if (!$bodyText) {
+                return [];
+            }
+
+            // parse the response to JSON
+            $data = \json_decode($bodyText, true);
             if (JSON_ERROR_NONE !== json_last_error()) {
                 $exception = new JiraApiException("JIRA server did not return a valid JSON");
                 $exception->setUrl($url)
