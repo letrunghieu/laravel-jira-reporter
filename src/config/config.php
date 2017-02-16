@@ -1,37 +1,42 @@
 <?php
 return [
+    'default'     => 'default',
+
     /*
      * JIRA server configuration
      */
-    'jira' => [
-        /*
-         * JIRA server domain name
-         */
-        'host'     => '',
+    'connections' => [
+        'default' => [
 
-        /*
-         * JIRA server port
-         */
-        'port'     => '',
+            /*
+             * JIRA server domain name
+             */
+            'host'     => '',
 
-        /*
-         * The project key to create issues
-         */
-        'project'  => '',
+            /*
+             * JIRA server port
+             */
+            'port'     => '',
 
-        /*
-         * JIRA username
-         */
-        'username' => '',
+            /*
+             * The project key to create issues
+             */
+            'project'  => '',
 
-        /*
-         * JIRA password
-         */
-        'password' => '',
+            /*
+             * JIRA username
+             */
+            'username' => '',
 
-        /*
-         * Use HTTPS instead of HTTP protocol
-         */
-        'secured'  => true,
+            /*
+             * JIRA password
+             */
+            'password' => '',
+
+            /*
+             * Use HTTPS instead of HTTP protocol
+             */
+            'secured'  => true,
+        ],
     ],
 ];

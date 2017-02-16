@@ -50,8 +50,6 @@ class JiraClient implements JiraClientContract
         return $this;
     }
 
-
-
     /**
      * @return string
      */
@@ -114,7 +112,7 @@ class JiraClient implements JiraClientContract
      * @see https://docs.atlassian.com/jira/REST/server/#api/2/issue-addComment
      *
      * @param string $issueId
-     * @param array $input
+     * @param array  $input
      *
      * @return array
      *
@@ -135,7 +133,7 @@ class JiraClient implements JiraClientContract
      * @return array the API results
      *
      */
-    protected function query($method, $endpoint, $data)
+    public function query($method, $endpoint, $data)
     {
         // Build the URL
         $url = "{$this->jiraUrl}/{$endpoint}";

@@ -4,9 +4,5 @@ namespace HieuLe\LaravelJiraReporter\Contracts;
 
 interface JiraClientContract
 {
-    public function createIssue($input);
-
-    public function addComment($issueId, $input);
-
-    public function searchIssues($title);
+    public function query($method, $endpoint, $data);
 }
