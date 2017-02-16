@@ -150,6 +150,16 @@ class JiraClient implements JiraClientContract
                 'query' => $data,
                 'auth'  => $auth,
             ]);
+        } elseif ($method == 'PUT') {
+            $response = $this->client->put($url, [
+                'json' => $data,
+                'auth' => $auth,
+            ]);
+        } elseif ($method == 'DELETE') {
+            $response = $this->client->delete($url, [
+                'json' => $data,
+                'auth' => $auth,
+            ]);
         } else {
             $response = $this->client->post($url, [
                 'json' => $data,
